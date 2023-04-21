@@ -7,7 +7,7 @@ export function createGetter(path) {
 
   return (obj) => {
     let tmpObj = {...obj};
-    for (const i of path.split('.')) {
+    for (let i of path.split('.')) {
       if (tmpObj !== undefined) {
         tmpObj = tmpObj[i];
       }

@@ -43,8 +43,8 @@ export default class ColumnChart {
 
     return this.data.map(item => {
       return {
-        percent: String((item / maxValue * 100).toFixed(0)),
-        value: String(Math.floor(item * scale))
+        percent: (item / maxValue * 100).toFixed(0),
+        value: Math.floor(item * scale)
       };
     });
   }

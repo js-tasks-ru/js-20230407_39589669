@@ -114,7 +114,6 @@ export default class SortableTable {
     this.element = wrapper.firstElementChild;
 
     this.subElements = this.getSubElements();
-    console.log(this.subElements);
   }
 
   getSubElements() {
@@ -139,12 +138,8 @@ export default class SortableTable {
 
   destroy() {
     this.remove();
-    // !!! hardcode !!!
-    // must "destroy" this.element = {}, but failed last test "should have ability to be destroyed"
-    // this.element = {};
-    this.element = document.createElement('s');
-    this.subElements = {};
-
+    this.element = null;
+    this.subElements = null;
     this.init();
   }
 }

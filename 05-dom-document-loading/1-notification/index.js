@@ -48,11 +48,7 @@ export default class NotificationMessage {
 
   destroy() {
     this.remove();
-    // !!! hardcode !!!
-    // must "destroy" this.element = {}, but failed last test "should have ability to be destroyed"
-    // this.element = {};
-    this.element = document.createElement('s');
-
+    this.element = null;
   }
 
   show(target) {
@@ -61,7 +57,7 @@ export default class NotificationMessage {
     NotificationMessage.instance?.destroy();
     NotificationMessage.instance = this;
 
-    ((typeof target == 'object') ? target : document.body).append(this.element);
+    ((typeof target === 'object') ? target : document.body).append(this.element);
 
     NotificationMessage.timeoutId = setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
